@@ -85,10 +85,6 @@ class AuditBenchmarkServiceTests {
 		a.setBenchmarkNoAnswers(1);
 		assertThat(assertThat(a).isNotNull());
 	}
-	/*@Test
-	void AuditBenchmark() {
-		EqualsVerifier.simple().forClass(AuditBenchmark.class).verify();
-	}*/
 	
 	
 }
