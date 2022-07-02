@@ -1,0 +1,19 @@
+
+c
+java:S2629>"7Use the built-in formatting to construct this argument.(Î’âóH¼RMAJORZ
+CODE_SMELL
+Š
+java:S2293R"YReplace the type specification in this constructor call with the diamond operator ("<>").(ýÃ³÷úÿÿÿÿH½RMINORZ
+CODE_SMELL
+Z
+java:S14525"&Remove usage of generic wildcard type.(€½ÃÁúÿÿÿÿH¿RCRITICALZ
+CODE_SMELL
+h
+java:S2629U"7Use the built-in formatting to construct this argument.(”…ºÚüÿÿÿÿHÁRMAJORZ
+CODE_SMELL
+r
+java:S3457U"AFormat specifiers should be used instead of string concatenation.(”…ºÚüÿÿÿÿHÀRMAJORZ
+CODE_SMELL
+m
+java:S3457>"AFormat specifiers should be used instead of string concatenation.(Î’âóHÂRMAJORZ
+CODE_SMELL

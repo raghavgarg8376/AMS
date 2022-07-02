@@ -1,0 +1,5 @@
+package com.audit.exception;
+
+public class AuthorizationException {
+
+}

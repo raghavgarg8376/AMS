@@ -1,0 +1,43 @@
+
+r
+java:S34576"AFormat specifiers should be used instead of string concatenation.(Úç™øøÿÿÿÿHÞRMAJORZ
+CODE_SMELL
+b
+java:S2629G"7Use the built-in formatting to construct this argument.(«ãøNHàRMAJORZ
+CODE_SMELL
+m
+java:S3457D"AFormat specifiers should be used instead of string concatenation.(­üÿ¹HßRMAJORZ
+CODE_SMELL
+R
+java:S1659,"&Declare "username" on a separate line.(®å›¶HáRMINORZ
+CODE_SMELL
+h
+java:S26291"7Use the built-in formatting to construct this argument.(¿ë–ìþÿÿÿÿHãRMAJORZ
+CODE_SMELL
+e
+java:S2387!"7"logger" is the name of a field in "GenericFilterBean".(å¹ý¬HíRBLOCKERZ
+CODE_SMELL
+h
+java:S2629K"7Use the built-in formatting to construct this argument.(Úç™øøÿÿÿÿHìRMAJORZ
+CODE_SMELL
+V
+java:S5411<"*Use the primitive boolean expression here.(¬Ì°ÜHçRMINORZ
+CODE_SMELL
+r
+java:S3457*"AFormat specifiers should be used instead of string concatenation.(˜§£îýÿÿÿÿHÝRMAJORZ
+CODE_SMELL
+r
+java:S3457K"AFormat specifiers should be used instead of string concatenation.(Úç™øøÿÿÿÿHëRMAJORZ
+CODE_SMELL
+h
+java:S26296"7Use the built-in formatting to construct this argument.(Úç™øøÿÿÿÿHêRMAJORZ
+CODE_SMELL
+c
+java:S2629D"7Use the built-in formatting to construct this argument.(­üÿ¹HæRMAJORZ
+CODE_SMELL
+l
+java:S3457G"AFormat specifiers should be used instead of string concatenation.(«ãøNHåRMAJORZ
+CODE_SMELL
+r
+java:S34571"AFormat specifiers should be used instead of string concatenation.(¿ë–ìþÿÿÿÿHäRMAJORZ
+CODE_SMELL

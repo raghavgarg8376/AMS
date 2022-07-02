@@ -1,0 +1,40 @@
+
+…
+java:S2293A"YReplace the type specification in this constructor call with the diamond operator ("<>").(œÒÏHÌRMINORZ
+CODE_SMELL
+„
+java:S2293p"YReplace the type specification in this constructor call with the diamond operator ("<>").(ƒ±üJHÒRMINORZ
+CODE_SMELL
+Š
+java:S2293I"YReplace the type specification in this constructor call with the diamond operator ("<>").(ÚÑ“üÿÿÿÿHÄRMINORZ
+CODE_SMELL
+m
+java:S3457H"AFormat specifiers should be used instead of string concatenation.(£¬—íHÑRMAJORZ
+CODE_SMELL
+r
+java:S3457q"AFormat specifiers should be used instead of string concatenation.(¤ğ–‚ÿÿÿÿÿHÆRMAJORZ
+CODE_SMELL
+V
+java:S5411c"*Use the primitive boolean expression here.(¬Ì°ÜHÇRMINORZ
+CODE_SMELL
+h
+java:S2629Z"7Use the built-in formatting to construct this argument.(ìˆ•ˆıÿÿÿÿHÃRMAJORZ
+CODE_SMELL
+„
+java:S2293g"YReplace the type specification in this constructor call with the diamond operator ("<>").(ƒ±üJHÕRMINORZ
+CODE_SMELL
+Š
+java:S2293,"YReplace the type specification in this constructor call with the diamond operator ("<>").(Ïà†úÿÿÿÿHÊRMINORZ
+CODE_SMELL
+„
+java:S2293k"YReplace the type specification in this constructor call with the diamond operator ("<>").(ƒ±üJHÎRMINORZ
+CODE_SMELL
+c
+java:S2629?"7Use the built-in formatting to construct this argument.(¤°ÍèH×RMAJORZ
+CODE_SMELL
+m
+java:S3457?"AFormat specifiers should be used instead of string concatenation.(¤°ÍèHĞRMAJORZ
+CODE_SMELL
+r
+java:S3457Z"AFormat specifiers should be used instead of string concatenation.(ìˆ•ˆıÿÿÿÿHÔRMAJORZ
+CODE_SMELL

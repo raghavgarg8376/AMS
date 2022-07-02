@@ -1,0 +1,14 @@
+com\audit\model\ProjectManager.class
+com\audit\model\AuthenticationResponse.class
+com\audit\repository\ProjectManagerRepo.class
+com\audit\exception\ProjectManagerNotFoundException.class
+com\audit\service\ProjectManagerDetailsService.class
+com\audit\exception\ExceptionHandlerAdvice.class
+com\audit\util\JwtService.class
+com\audit\service\ProjectManagerService.class
+com\audit\controller\AuthController.class
+com\audit\filter\JwtRequestFilter.class
+com\audit\model\ProjectManagerDetails.class
+com\audit\model\AuthenticationRequest.class
+com\audit\config\SecurityConfig.class
+com\audit\AuthorizationApplication.class

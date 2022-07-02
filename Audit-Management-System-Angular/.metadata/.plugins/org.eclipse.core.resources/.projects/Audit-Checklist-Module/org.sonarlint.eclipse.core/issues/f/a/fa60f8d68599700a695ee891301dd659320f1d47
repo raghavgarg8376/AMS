@@ -1,0 +1,25 @@
+
+m
+java:S1854B"ARemove this useless assignment to local variable "questionsList".(‹–¤†HâRMAJORZ
+CODE_SMELL
+r
+java:S34570"AFormat specifiers should be used instead of string concatenation.(ø÷›†ùÿÿÿÿHÖRMAJORZ
+CODE_SMELL
+P
+java:S3457G"%String contains no format specifiers.(¿µÇRHĞRMAJORZ
+CODE_SMELL
+U
+java:S1452A"&Remove usage of generic wildcard type.(ôëò»HÙRCRITICALZ
+CODE_SMELL
+Š
+java:S2293F"YReplace the type specification in this constructor call with the diamond operator ("<>").(İïôøÿÿÿÿH×RMINORZ
+CODE_SMELL
+h
+java:S26290"7Use the built-in formatting to construct this argument.(ø÷›†ùÿÿÿÿHÚRMAJORZ
+CODE_SMELL
+…
+java:S2293N"YReplace the type specification in this constructor call with the diamond operator ("<>").(×ÍÃHÒRMINORZ
+CODE_SMELL
+…
+java:S2293."YReplace the type specification in this constructor call with the diamond operator ("<>").(Û¼°ôHÔRMINORZ
+CODE_SMELL

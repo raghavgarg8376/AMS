@@ -1,0 +1,10 @@
+
+	java:S117("QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ØŒ—üÿÿÿÿHîRMINORZ
+CODE_SMELL
+ˆ	java:S116"XRename this field "TOKENDURATION" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ÿ²½ùÿÿÿÿHğRMINORZ
+CODE_SMELL
+|
+java:S5361("HReplace this call to "replaceAll()" by a call to the "replace()" method.(ØŒ—üÿÿÿÿHïRCRITICALZ
+CODE_SMELL
+„	java:S116"TRename this field "SECRETKEY" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¯ÊÏˆúÿÿÿÿHñRMINORZ
+CODE_SMELL

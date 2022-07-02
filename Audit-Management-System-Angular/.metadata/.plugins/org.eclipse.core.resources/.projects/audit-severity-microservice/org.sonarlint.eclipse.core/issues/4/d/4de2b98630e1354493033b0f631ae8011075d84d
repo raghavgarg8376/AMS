@@ -1,0 +1,19 @@
+
+r
+java:S3457X"AFormat specifiers should be used instead of string concatenation.(ÔÉêÃøÿÿÿÿHµRMAJORZ
+CODE_SMELL
+h
+java:S2629X"7Use the built-in formatting to construct this argument.(ÔÉêÃøÿÿÿÿH¶RMAJORZ
+CODE_SMELL
+b
+java:S1135D"2Complete the task associated to this TODO comment.(» æžÿÿÿÿÿH´RINFOZ
+CODE_SMELL
+b
+java:S1135S"2Complete the task associated to this TODO comment.(» æžÿÿÿÿÿHºRINFOZ
+CODE_SMELL
+U
+java:S2629!"$Invoke method(s) only conditionally.(•Øõ úÿÿÿÿH»RMAJORZ
+CODE_SMELL
+–
+java:S1488L"eImmediately return this expression instead of assigning it to the temporary variable "auditResponse".(††ó©ûÿÿÿÿH·RMINORZ
+CODE_SMELL

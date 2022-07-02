@@ -1,0 +1,10 @@
+
+Z
+java:S1602",Remove useless curly braces around statement(э£Ч‘ъ€€€€RMINORZ
+CODE_SMELL
+З
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(Я‘шь€€€€€RMINORZ
+CODE_SMELL
+a
+java:S1611"3Remove the parentheses around the "error" parameter(э£Ч‘ъ€€€€RMINORZ
+CODE_SMELL

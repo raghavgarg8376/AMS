@@ -1,0 +1,10 @@
+
+\
+java:S1948"(Make "logger" transient or serializable.(ÁÅÖæùÿÿÿÿHÙRCRITICALZ
+CODE_SMELL
+U
+java:S1452"&Remove usage of generic wildcard type.(—¤‡¨HÚRCRITICALZ
+CODE_SMELL
+P
+java:S1165"Make this "logger" field final.(ÁÅÖæùÿÿÿÿHÛRMINORZ
+CODE_SMELL

@@ -1,0 +1,4 @@
+com\audit\service\QuestionServiceTests.class
+com\audit\AuditChecklistApplicationTests.class
+com\audit\controller\AuditChecklistControllerTests.class
+com\audit\service\AuthorizationServiceTests.class

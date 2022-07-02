@@ -1,0 +1,15 @@
+-------------------------------------------------------------------------------
+Test set: com.audit.service.AuditBenchmarkServiceTests
+-------------------------------------------------------------------------------
+Tests run: 8, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.565 s <<< FAILURE! - in com.audit.service.AuditBenchmarkServiceTests
+testAuthenticationResponse  Time elapsed: 0.307 s  <<< FAILURE!
+java.lang.AssertionError: 
+EqualsVerifier found a problem in class com.audit.model.AuthenticationResponse.
+-> Equals is inherited directly from Object.
+Suppress Warning.INHERITED_DIRECTLY_FROM_OBJECT to skip this check.
+
+For more information, go to: http://www.jqno.nl/equalsverifier/errormessages
+	at com.audit.service.AuditBenchmarkServiceTests.testAuthenticationResponse(AuditBenchmarkServiceTests.java:70)
+Caused by: nl.jqno.equalsverifier.internal.exceptions.AssertionException
+	at com.audit.service.AuditBenchmarkServiceTests.testAuthenticationResponse(AuditBenchmarkServiceTests.java:70)
+

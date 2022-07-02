@@ -1,0 +1,26 @@
+version: 0.2
+phases:
+  install:
+     runtime-versions:
+      docker: 18
+  pre_build:
+    commands:
+      - echo "Entered pre_build phase"
+      - $(aws ecr get-login  --no-include-email --region us-east-2)
+  build:
+    commands:
+      - echo "Entered build phase"
+      - cd Audit-Checklist-Module
+      - mvn compile
+      - mvn package
+      - echo "building docker image"
+      - docker build -t service/auditcheckapp .
+      - docker tag service/auditcheckapp 885843804602.dkr.ecr.us-east-2.amazonaws.com/docker-audit-check:auditcheckapp
+  post_build:
+     commands:
+      - echo "Entered the post-build phase"
+      - docker push 885843804602.dkr.ecr.us-east-2.amazonaws.com/docker-audit-check:auditcheckapp
+      - printf '[{"name":"auditcheckapp-container-audit","imageUri":"%s"}]' 885843804602.dkr.ecr.us-east-2.amazonaws.com/docker-audit-check:auditcheckapp > imagedefinitions.json
+artifacts:
+  files:
+    - Audit-Checklist-Module/imagedefinitions.json

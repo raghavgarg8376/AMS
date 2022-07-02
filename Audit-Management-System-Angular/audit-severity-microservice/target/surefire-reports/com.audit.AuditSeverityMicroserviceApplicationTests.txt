@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.audit.AuditSeverityMicroserviceApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 18.151 s - in com.audit.AuditSeverityMicroserviceApplicationTests

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>AuthController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Authorization</a> &gt; <a href="index.source.html" class="el_package">com.audit.controller</a> &gt; <span class="el_source">AuthController.java</span></div><h1>AuthController.java</h1><pre class="source lang-java linenums">package com.audit.controller;
+
+import javax.validation.Valid;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.audit.model.AuthenticationRequest;
+import com.audit.model.AuthenticationResponse;
+import com.audit.model.ProjectManagerDetails;
+import com.audit.service.ProjectManagerDetailsService;
+import com.audit.util.JwtService;
+
+@RestController
+@RequestMapping(&quot;/auth&quot;)	//Context Root
+@CrossOrigin(origins = &quot;*&quot;)
+<span class="fc" id="L29">public class AuthController {</span>
+	
+	@Autowired
+	private AuthenticationManager authenticationManager;
+	
+	@Autowired
+	private ProjectManagerDetailsService projectManagerDetailsService;
+	
+	@Autowired
+	private JwtService jwtService;
+	
+<span class="fc" id="L40">	Logger logger = LoggerFactory.getLogger(&quot;Auth-Controller-Logger&quot;);</span>
+	
+	@GetMapping(&quot;/health-check&quot;)
+	public ResponseEntity&lt;String&gt; healthCheck(){	// for Health check [PERMITTED FOR ALL]
+<span class="nc" id="L44">		return new ResponseEntity&lt;String&gt;(&quot;Audit-Authorization MS Running Fine!!&quot;, HttpStatus.OK);</span>
+	}
+
+
+	// authentication - for the very first login
+	@PostMapping(&quot;/authenticate&quot;)
+	public ResponseEntity&lt;String&gt; generateJwt(@Valid @RequestBody AuthenticationRequest request){
+<span class="fc" id="L51">		ResponseEntity&lt;String&gt; response = null;</span>
+		
+		// authenticating the User-Credentials
+		try {
+<span class="fc" id="L55">			authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(request.getUsername(), request.getPassword()));</span>
+			// else when it authenticates successfully
+<span class="fc" id="L57">			final ProjectManagerDetails projectManagerDetails = projectManagerDetailsService</span>
+<span class="fc" id="L58">																	.loadUserByUsername(request.getUsername());</span>
+			
+<span class="fc" id="L60">			final String jwt = jwtService.generateToken(projectManagerDetails);	// returning the token as response</span>
+			
+			//test
+<span class="fc" id="L63">			logger.info(&quot;Authenticated User :: &quot; + projectManagerDetails);</span>
+			
+<span class="fc" id="L65">			response = new ResponseEntity&lt;String&gt;(jwt, HttpStatus.OK);</span>
+			
+<span class="fc" id="L67">			logger.info(&quot;Successfully Authenticated user!&quot;);</span>
+			
+<span class="fc" id="L69">		}</span>
+<span class="fc" id="L70">		catch (Exception e) </span>
+		{
+<span class="fc" id="L72">			logger.error(e.getMessage() + &quot;!! info about request-body : &quot; + request);</span>
+<span class="fc" id="L73">			response = new ResponseEntity&lt;String&gt;(&quot;Not Authorized Project Manager&quot;, HttpStatus.FORBIDDEN);</span>
+		}
+<span class="fc" id="L75">		logger.info(&quot;-------- Exiting /authenticate&quot;);</span>
+<span class="fc" id="L76">		return response;</span>
+	}
+	
+	// validate - for every request it validates the user-credentials from the provided Jwt token in Authorization req. header
+	@PostMapping(&quot;/validate&quot;)
+	public ResponseEntity&lt;AuthenticationResponse&gt; validateJwt(@RequestHeader(&quot;Authorization&quot;) String jwt){
+		
+<span class="fc" id="L83">		AuthenticationResponse authenticationResponse = new AuthenticationResponse(&quot;Invalid&quot;, &quot;Invalid&quot;, false);</span>
+<span class="fc" id="L84">		ResponseEntity&lt;AuthenticationResponse&gt; response = null;</span>
+
+		//first remove Bearer from Header
+<span class="fc" id="L87">		jwt = jwt.substring(7);</span>
+		
+		//check token
+<span class="fc" id="L90">		logger.info(&quot;--------JWT :: &quot;+jwt);</span>
+		
+		
+		// check the jwt is proper or not
+<span class="fc" id="L94">		final ProjectManagerDetails projectManagerDetails = projectManagerDetailsService</span>
+<span class="fc" id="L95">															.loadUserByUsername(jwtService.extractUsername(jwt));</span>
+		
+		// now validating the jwt
+		try {
+<span class="fc bfc" id="L99" title="All 2 branches covered.">			if(jwtService.validateToken(jwt, projectManagerDetails)) {</span>
+<span class="fc" id="L100">				authenticationResponse.setName(projectManagerDetails.getName());</span>
+<span class="fc" id="L101">				authenticationResponse.setProjectName(projectManagerDetails.getProjectName());</span>
+<span class="fc" id="L102">				authenticationResponse.setValid(true);</span>
+<span class="fc" id="L103">				response = new ResponseEntity&lt;AuthenticationResponse&gt;(authenticationResponse, HttpStatus.OK);</span>
+<span class="fc" id="L104">				logger.info(&quot;Successfully validated the jwt and sending response back!&quot;);</span>
+<span class="fc" id="L105">			}</span>
+			else {
+<span class="fc" id="L107">				response = new ResponseEntity&lt;AuthenticationResponse&gt;(authenticationResponse, HttpStatus.OK);</span>
+<span class="fc" id="L108">				logger.error(&quot;JWT Token validation failed!&quot;);</span>
+			}
+<span class="pc" id="L110">		}catch (Exception e) {</span>
+<span class="nc" id="L111">			logger.error(e.getMessage());</span>
+<span class="nc" id="L112">			response = new ResponseEntity&lt;AuthenticationResponse&gt;(authenticationResponse, HttpStatus.OK);</span>
+<span class="nc" id="L113">			logger.error(&quot;Exception occured whil validating JWT : Exception info : &quot; + e.getMessage());</span>
+		}
+<span class="fc" id="L115">		logger.info(&quot;-------- Exiting /validate&quot;);</span>
+<span class="fc" id="L116">		return response;</span>
+	}
+	
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

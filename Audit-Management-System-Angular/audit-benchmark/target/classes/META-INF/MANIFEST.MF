@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Built-By: Admin
+Build-Jdk: 17.0.2
+Implementation-Title: audit-benchmark
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: com.audit.cohert2
+Implementation-URL: https://spring.io/projects/spring-boot/audit-benchma
+ rk
+Created-By: Maven Integration for Eclipse
+

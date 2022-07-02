@@ -1,0 +1,8 @@
+
+S
+java:S1128"*Remove this unused import 'lombok.Setter'.(ó¸çµRMINORZ
+CODE_SMELL
+S
+java:S1128
+"*Remove this unused import 'lombok.Getter'.(ùÒµÙRMINORZ
+CODE_SMELL

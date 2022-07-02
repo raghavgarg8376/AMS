@@ -1,0 +1,13 @@
+
+h
+java:S2629,"7Use the built-in formatting to construct this argument.(”…ºÚüÿÿÿÿH¬RMAJORZ
+CODE_SMELL
+r
+java:S3457'"AFormat specifiers should be used instead of string concatenation.(ø÷›†ùÿÿÿÿH­RMAJORZ
+CODE_SMELL
+r
+java:S3457,"AFormat specifiers should be used instead of string concatenation.(”…ºÚüÿÿÿÿHªRMAJORZ
+CODE_SMELL
+h
+java:S2629'"7Use the built-in formatting to construct this argument.(ø÷›†ùÿÿÿÿH«RMAJORZ
+CODE_SMELL

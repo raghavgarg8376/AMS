@@ -1,0 +1,10 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+Authorization,com.audit.model,AuthenticationRequest,0,17,0,0,0,3,0,5,0,5
+Authorization,com.audit.model,ProjectManagerDetails,12,74,0,0,5,14,5,7,5,7
+Authorization,com.audit.model,ProjectManager,4,52,0,0,0,4,1,11,1,11
+Authorization,com.audit.model,AuthenticationResponse,2,144,1,25,0,5,1,23,0,11
+Authorization,com.audit.controller,AuthController,29,156,0,2,4,34,1,4,1,3
+Authorization,com.audit.config,SecurityConfig,0,89,0,0,0,16,0,6,0,6
+Authorization,com.audit,AuthorizationApplication,0,8,0,0,0,3,0,2,0,2
+Authorization,com.audit.service,ProjectManagerDetailsService,0,22,0,2,0,7,0,3,0,2
+Authorization,com.audit.service,ProjectManagerService,5,14,1,1,1,5,1,2,0,2

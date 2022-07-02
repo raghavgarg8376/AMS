@@ -1,0 +1,26 @@
+version: 0.2
+phases:
+  install:
+     runtime-versions:
+      docker: 18
+  pre_build:
+    commands:
+      - echo "Entered the pre_build phase"
+      - aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin 885843804602.dkr.ecr.us-east-2.amazonaws.com
+  build:
+    commands:
+      - echo "Entered the build phase"
+      - cd audit-severity-microservice
+      - mvn compile
+      - mvn package
+      - echo "building docker image"
+      - docker build -t service/auditseverapp .
+      - docker tag service/auditseverapp 885843804602.dkr.ecr.us-east-2.amazonaws.com/docker-audit-sever:auditseverapp
+  post_build:
+     commands:
+      - echo "Entered the post-build phase"
+      - docker push 885843804602.dkr.ecr.us-east-2.amazonaws.com/docker-audit-sever:auditseverapp
+      - printf '[{"name":"auditseverapp-container-audit","imageUri":"%s"}]' 885843804602.dkr.ecr.us-east-2.amazonaws.com/docker-audit-sever:auditseverapp > taskdefinition.json
+artifacts:
+  files:
+    - audit-severity-microservice/taskdefinition.json

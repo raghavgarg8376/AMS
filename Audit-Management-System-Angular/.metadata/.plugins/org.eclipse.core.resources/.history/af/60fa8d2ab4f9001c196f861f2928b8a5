@@ -1,0 +1,16 @@
+-------------------------------------------------------------------------------
+Test set: com.audit.AuditBenchmarkApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 15.615 s <<< FAILURE! - in com.audit.AuditBenchmarkApplicationTests
+main  Time elapsed: 2.721 s  <<< ERROR!
+org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8250 is already in use
+	at com.audit.AuditBenchmarkApplicationTests.main(AuditBenchmarkApplicationTests.java:26)
+Caused by: org.springframework.boot.web.server.PortInUseException: Port 8250 is already in use
+	at com.audit.AuditBenchmarkApplicationTests.main(AuditBenchmarkApplicationTests.java:26)
+Caused by: java.lang.IllegalArgumentException: standardService.connector.startFailed
+	at com.audit.AuditBenchmarkApplicationTests.main(AuditBenchmarkApplicationTests.java:26)
+Caused by: org.apache.catalina.LifecycleException: Protocol handler start failed
+	at com.audit.AuditBenchmarkApplicationTests.main(AuditBenchmarkApplicationTests.java:26)
+Caused by: java.net.BindException: Address already in use: bind
+	at com.audit.AuditBenchmarkApplicationTests.main(AuditBenchmarkApplicationTests.java:26)
+

@@ -1,0 +1,1 @@
+INSERT INTO audit_benchmark(benchmarkId,audit_type,benchmark_no_answers) VALUES (1,'Internal',3);
